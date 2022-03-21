@@ -1,0 +1,80 @@
+// ++++++++++++++++++++++++ Variables ++++++++++++++++++++++++
+
+// Fonts
+$roboto: 'Roboto', serif;
+$oswald: 'Oswald', serif;
+
+// Breakpoints /
+$large: large;
+$desktop: desktop;
+$medium: medium;
+$neutral: neutral;
+$mobile: mobile;
+$not-mobile: not-mobile;
+$x-small: x-small;
+
+// Sizing */
+$gutter: 15px;
+
+// Colors */
+$color_primary: #55523e;
+$color_secondary: #40402e;
+$color_link: #756d40;
+$color_hover: #9f3e2e;
+
+
+@mixin break($point) {
+  @if $point == large {
+    @media (min-width: 1350px) {
+      @content;
+    }
+  } @else if $point == desktop {
+    @media (min-width: 1300px) {
+      @content;
+    }
+  } @else if $point == medium {
+    @media (max-width: 1299px) {
+      @content;
+    }
+  } @else if $point == neutral {
+    @media (max-width: 992px) {
+      @content;
+    }
+  } @else if $point == mobile {
+    @media (max-width: 767px) {
+      @content;
+    }
+  } @else if $point == not-mobile {
+    @media (min-width: 768px) {
+      @content;
+    }
+  } @else if $point == x-small {
+    @media (max-width: 479px) {
+      @content;
+    }
+  }
+}
+
+// ++++++++++++++++++++++++ Mixins ++++++++++++++++++++++++ */
+// Column`s width */
+@mixin col-width($width){
+  width: $width;
+  padding-left: $gutter;
+  padding-right: $gutter;
+  float: left;
+}
+
+// Width Height */
+@mixin size($width: 20px, $height: 20px) {
+  width: $width;
+  height: $height
+}
+
+@mixin circle($size: 10px, $color: #fff) {
+  width: $size;
+  height: $size;
+  background: $color;
+  border-radius: 50%;
+  content: '';
+  display: inline-block;
+}

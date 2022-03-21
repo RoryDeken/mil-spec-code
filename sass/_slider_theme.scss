@@ -1,0 +1,196 @@
+/* Slider theme.
+------------------------------------------------------------ */
+.row-slider {
+  position: relative;
+  overflow: hidden;
+  &:before {
+    background: rgba(0, 0, 0, 0.7);
+    content: "";
+    display: block;
+    height: 100.1%;
+    position: absolute;
+    right: -60%;
+    transform: skewX(-22deg);
+    width: 100%;
+    z-index: 3;
+    @include break($medium) {
+      right: -50%;
+    }
+    @include break($mobile) {
+      display: none;
+    }
+  }
+}
+
+.slider-text {
+  bottom: 8%;
+  color: #dcd9ce;
+  position: absolute;
+  right: 7%;
+  text-align: right;
+  text-transform: uppercase;
+  z-index: 4;
+  @include break($medium) {
+    right: 5%;
+    bottom: 20px;
+  }
+  @include break($mobile) {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.7);
+    padding: 20px 20px 10px;
+    position: static;
+    text-align: center;
+  }
+
+  strong {
+    color: #fff;
+    font-family: $oswald;
+    font-size: 36px;
+    font-weight: normal;
+    em {
+      color: #bfb486;
+      font-style: normal;
+    }
+    @include break($medium) {
+      font-size: 24px;
+    }
+  }
+  p {
+    width: 480px;
+    @include break($medium) {
+      text-transform: none;
+      width: 300px;
+      padding-bottom: 10px;
+    }
+    @include break($mobile) {
+      width: 100%;
+    }
+  }
+  a {
+    background: #9f3e2e;
+    color: #f7f7f7;
+    display: inline-block;
+    font-size: 20px;
+    padding: 15px 50px;
+    text-decoration: none;
+    position: relative;
+    @include break($medium) {
+      font-size: 16px;
+      padding: 10px 30px;
+    }
+    span {
+      position: relative;
+      z-index: 1;
+    }
+    &:after {
+      content: '';
+      background: #893426;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 0;
+      transition: all .3s ease-out;
+    }
+    &:hover {
+      color: #f7f7f7;
+      text-decoration: none;
+      &:after {
+        height: 100%;
+      }
+    }
+  }
+}
+
+.flexslider {
+
+  // Left/right arrows.
+  .flex-direction-nav {
+    a {
+      background: url("../images/arrows.png") no-repeat scroll 0 0 transparent;
+      height: 47px;
+      margin-top: -24px;
+      position: absolute;
+      top: 50%;
+      transition: all 0.3s ease 0s;
+      width: 47px;
+      font-size: 0;
+      line-height: 0;
+      text-decoration: none;
+      z-index: 12;
+      @include break($not-mobile) {
+        display: none;
+      }
+      &.flex-prev {
+        left: 35px;
+        &:hover {
+          background-position: 0 -47px;
+        }
+        @include break($mobile) {
+          left: 0;
+        }
+      }
+      &.flex-next {
+        right: 35px;
+        background-position: -47px 0;
+        @include break($mobile) {
+          right: 0;
+        }
+        &:hover {
+          background-position: -47px -47px;
+        }
+      }
+      @include break($neutral) {
+        top: 40%;
+      }
+      @include break($mobile) {
+        top: 50%;
+        &.flex-prev:hover {
+          background-position: 0 0;
+        }
+        &.flex-next:hover {
+          background-position: -47px 0;
+        }
+      }
+    }
+  }
+
+  // Slider pagination(dots).
+  .flex-control-nav {
+    position: absolute;
+    top: 30px;
+    right: 35px;
+    z-index: 8;
+    li {
+      padding: 0 3px;
+      display: inline-block;
+      zoom: 1;
+      a {
+        background: url("../images/slider-dots.png") no-repeat scroll -20px 50%;
+        cursor: pointer;
+        display: block;
+        float: left;
+        height: 14px;
+        position: relative;
+        text-indent: -999em;
+        width: 14px;
+        &:hover {
+          background-position: 0 0;
+        }
+        &.flex-active {
+          background-position: 0 0;
+          cursor: default;
+        }
+      }
+    }
+    @include break($mobile) {
+      display: none;
+    }
+  }
+}
+
+// Show Left/right arrows on slider hover.
+.row-slider:hover {
+  .flex-direction-nav a {
+    display: block;
+  }
+}

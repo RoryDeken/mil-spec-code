@@ -1,0 +1,28 @@
+{
+  "name": "msl",
+  "version": "1.0.0",
+  "description": "Mil Spect Life Styles",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "",
+  "license": "ISC",
+  "scripts": {},
+  "preinstall": "npx npm-force-resolutions",
+  "resolutions": {
+    "glob-parent": "^6.0.1"
+  },
+  "devDependencies": {
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-uglify": "^3.0.2",
+    "sass": "^1.49.7"
+  },
+  "dependencies": {
+    "chokidar": "^3.5.3",
+    "gulp": "^4.0.2",
+    "gulp-uglifycss": "^1.1.0",
+    "unibeautify": "^0.17.1"
+  }
+}

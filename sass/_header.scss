@@ -1,0 +1,226 @@
+/* -------------------------------------------------------------------------------------------------------------------
+                                                  Header elements
+------------------------------------------------------------------------------------------------------------------- */
+.site-header {
+  background: #000;
+}
+
+#logo {
+  float: left;
+  padding: 20px 0 0 36px;
+  @include break($neutral) {
+    padding: 20px;
+    text-align: center;
+    float: none;
+  }
+  a {
+    display: block;
+    @include break($neutral) {
+      display: inline-block;
+    }
+  }
+}
+
+/* Primary menu
+------------------------------------------------------------ */
+.nav-primary {
+  position: relative;
+  z-index: 10;
+  background: #696239;
+  float: right;
+  padding-left: 20px;
+  @include break($neutral) {
+    padding: 0;
+    float: none;
+  }
+  &::before {
+    background: url("../images/primary-menu-bg.jpg");
+    content: "";
+    display: block;
+    left: -38px;
+    position: absolute;
+    top: 0;
+    width: 39px;
+    z-index: 1;
+    height: 100%;
+    @include break($neutral) {
+      display: none;
+    }
+  }
+  // Common styles.
+  .main-menu {
+    li {
+      position: relative;
+      display: block;
+      z-index: 2;
+      a {
+        color: #efe7d5;
+        display: block;
+        font-family: $oswald;
+        position: relative;
+        text-decoration: none;
+        text-transform: uppercase;
+        line-height: 1;
+      }
+    }
+    // 1st level menus.
+    > li {
+      float: left;
+      &.menu-item-has-children > a {
+        padding-right: 30px;
+        &:after {
+          border-color: #778249 transparent transparent;
+          border-style: solid;
+          border-width: 5px 4.5px 0;
+          content: "";
+          display: block;
+          height: 0;
+          margin-top: -2px;
+          position: absolute;
+          right: 12px;
+          top: 50%;
+          width: 0;
+        }
+      }
+      > a {
+        font-size: 18px;
+        padding: 35px 20px;
+        @include break($medium) {
+          font-size: 14px;
+        }
+      }
+      &:hover,
+      &.sfHover,
+      &.current_page_item {
+        > a {
+          color: #f2e6df;
+          background: $color_hover;
+          &:after {
+            border-color: #d8a786 transparent transparent;
+          }
+        }
+      }
+    }
+  }
+  // 2nd Level.
+  ul.sub-menu {
+    background: $color_hover;
+    position: absolute;
+    top: 88px;
+    width: 206px;
+    z-index: 2;
+    display: none;
+    padding: 15px 0;
+    @include break($medium) {
+      top: 84px;
+    }
+    a {
+      font-size: 14px;
+      padding: 8px 10px 8px 18px;
+      @include break($medium) {
+        font-size: 12px;
+      }
+    }
+    li.sfHover > a,
+    a:hover {
+      color: #fff;
+      background: #893426;
+    }
+    .sf-sub-indicator {
+      display: none;
+    }
+    // 3rd level.
+    ul {
+      left: 206px;
+      top: -15px;
+    }
+  }
+  @include break($mobile) {
+    display: none;
+  }
+}
+
+/* Mobile menu
+------------------------------------------------------------ */
+#hamburger {
+  background-color: #393939;
+  display: none;
+  height: 36px;
+  left: 10px;
+  position: absolute;
+  top: 10px;
+  width: 40px;
+  z-index: 10;
+  &:before,
+  &:after,
+  & span {
+    background: #b7b0a5;
+    content: '';
+    display: block;
+    width: 30px;
+    height: 5px;
+    position: absolute;
+    left: 5px;
+  }
+  &:before {
+    top: 5px;
+  }
+  &:after {
+    bottom: 5px;
+  }
+  & span {
+    top: 50%;
+    margin-top: -3px;
+  }
+  @include break($mobile) {
+    display: block;
+  }
+}
+
+.mm-list, .mm-list > li, .mm-list > li a {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Hamburger animation */
+#hamburger:before,
+#hamburger:after,
+#hamburger span {
+  transition: none 0.5s ease 0.5s;
+  transition-property: transform, top, bottom, left, opacity;
+}
+
+html.mm-opening #hamburger span {
+  left: -50px;
+  opacity: 0;
+}
+
+html.mm-opening #hamburger:before {
+  transform: rotate(45deg);
+  top: 15px;
+}
+
+html.mm-opening #hamburger:after {
+  transform: rotate(-45deg);
+  bottom: 15px;
+}
+
+/* Mobile top fixed floating row
+------------------------------------------------------------ */
+.mobile-top {
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  height: 45px;
+  background: #161616;
+  display: none;
+  width: 100%;
+  box-shadow: 0 0 10px #000;
+  transition: .5s;
+  // Apply manual shift for the row to fix indent in safari.
+  &.act {
+    //left: 440px;
+  }
+  @include break($mobile) {
+    display: block;
+  }
+}

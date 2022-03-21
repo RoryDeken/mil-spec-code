@@ -1,0 +1,107 @@
+/* Owl carousel theme styles */
+.owl-theme .owl-controls {
+  text-align: center;
+}
+
+/* Next and Prev buttons */
+.owl-buttons {
+  @include break($neutral) {
+    margin: auto;
+    width: 160px;
+  }
+  div {
+    background: url("../images/arrows.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    display: block;
+    @include size(47px, 47px);
+    margin-top: -24px;
+    position: absolute;
+    top: 50%;
+    transition: all 0.3s ease 0s;
+    @include break($neutral) {
+      position: static;
+      margin-top: 30px;
+    }
+    span {
+      display: none;
+    }
+    i {
+      display: none;
+    }
+    &.owl-prev {
+      left: -50px;
+      @include break($medium) {
+        left: -25px;
+      }
+      @include break($neutral) {
+        float: left;
+      }
+    }
+    &.owl-next {
+      right: -50px;
+      @include break($medium) {
+        right: -25px;
+      }
+      @include break($neutral) {
+        float: right;
+      }
+      background-position: -47px 0;
+    }
+    @include break($not-mobile) {
+      &:hover {
+        &.owl-prev {
+          background-position: 0 -47px;
+        }
+        &.owl-next {
+          background-position: -47px -47px;
+        }
+      }
+    }
+  }
+}
+
+/* Pagination */
+.owl-pagination {
+  bottom: -60px;
+  left: 50%;
+  margin-left: -65px;
+  position: absolute;
+  @include break($mobile) {
+    bottom: -50px;
+  }
+  .owl-page {
+    display: inline-block;
+    zoom: 1;
+    *display: inline; /*IE7 life-saver */
+    span {
+      background: none repeat scroll 0 0 #ededed;
+      border-radius: 50%;
+      display: block;
+      height: 8px;
+      margin: 0 4px;
+      width: 8px;
+      opacity: 0.5;
+    }
+    &.active span,
+    &:hover span {
+      opacity: 1;
+    }
+  }
+}
+
+/* If PaginationNumbers is true */
+
+.owl-theme .owl-controls .owl-page span.owl-numbers {
+  height: auto;
+  width: auto;
+  color: #FFF;
+  padding: 2px 10px;
+  font-size: 12px;
+  border-radius: 30px;
+}
+
+/* preloading images */
+.owl-item.loading {
+  min-height: 150px;
+  background: url(../images/loader.gif) no-repeat center center
+}
+
