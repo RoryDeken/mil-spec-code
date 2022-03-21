@@ -36,7 +36,8 @@ function theme_scripts() {
   }
 
   // Theme stylesheet.
-  wp_enqueue_style( 'main', get_template_directory_uri() . '/css/main.min.css', array(), '1.0.0', 'all' );
+  $theme_data = wp_get_theme();
+  wp_enqueue_style( 'main', get_template_directory_uri() . '/css/main.min.css', array(), $theme_data->version , 'all' );
 
   /* ++++++++++ Scripts ++++++++++ */
   // Popup

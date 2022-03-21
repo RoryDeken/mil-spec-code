@@ -15,9 +15,7 @@
         if ( $format == '' ) {
           get_template_part( 'includes/post-formats/standard' );
         } ?>
-
-        <?php get_template_part( 'includes/post-formats/related-posts' ); ?>
-
+      
         <?php comments_template( '', TRUE ); ?>
 
       <?php endwhile; endif; ?>

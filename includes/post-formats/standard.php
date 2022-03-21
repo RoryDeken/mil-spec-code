@@ -8,7 +8,7 @@
         </a>
       </h3>
     <?php else : ?>
-      <!-- <h1 class="entry-title"><?php //the_title(); ?></h1> -->
+      <!-- <h2 class="entry-title"><?php //the_title(); ?></h2> -->
     <?php endif; ?>
   </header>
 

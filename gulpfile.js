@@ -17,7 +17,7 @@ function clean() {
 function build(cb) {
   src('./sass/main.scss')
     .pipe(sass())
-    .pipe(rename({ basename: 'stlye', extname: '.css' }))
+    .pipe(rename({ basename: 'style', extname: '.css' }))
     .pipe(dest('.'));
   src('./sass/main.scss')
     .pipe(sass())

@@ -37,6 +37,7 @@ if ( ! $detect->isMobile() && ! $detect->isTablet() ) {
         <img
           src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo-khaki.png"
           alt="<?php echo get_bloginfo( 'description', 'display' ); ?>"/>
+          <h1 class="site-title"><?php echo get_bloginfo( 'name' ); ?></h1>
       </a>
     </div>
 

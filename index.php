@@ -25,7 +25,7 @@ get_header(); ?>
 
         <?php if (is_home() && !is_front_page()) : ?>
           <header>
-            <h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+            <h2 class="page-title screen-reader-text"><?php single_post_title(); ?></h2>
           </header>
         <?php endif; ?>
 

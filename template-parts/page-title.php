@@ -6,10 +6,10 @@
 
 if ( is_author() ) { ?>
 
-  <h1><?php _e( 'Recent Posts by', 'theme' ); ?>  <?php echo get_the_author(); ?></h1>
+  <h2 class="title"><?php _e( 'Recent Posts by', 'theme' ); ?>  <?php echo get_the_author(); ?></h2>
 <?php } else {
   if ( is_archive() ) { ?>
-    <h1>
+    <h2 class="title">
       <?php if ( is_day() ) : /* if the daily archive is loaded */ ?>
         <?php printf( __( 'Daily Archives: <span>%s</span>' ), get_the_date() ); ?>
       <?php elseif ( is_month() ) : /* if the montly archive is loaded */ ?>
@@ -26,13 +26,13 @@ if ( is_author() ) { ?>
       <?php else : /* if anything else is loaded, ex. if the tags or categories template is missing this page will load */ ?>
         <?php printf( __( 'Category Archives: %s' ), '<span>' . single_cat_title( '', FALSE ) . '</span>' ); ?>
       <?php endif; ?>
-    </h1>
+    </h2>
 
   <?php } elseif ( is_404() ) { ?>
-    <h1><?php _e( 'Oops! That page can&rsquo;t be found.', 'theme' ); ?></h1>
+    <h2 class="title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'theme' ); ?></h2>
   <?php }  elseif ( is_search() ) { ?>
-    <h1><?php _e( 'Search results', 'theme' ); ?></h1>
+    <h2 class="title"><?php _e( 'Search results', 'theme' ); ?></h2>
   <?php } else {
-    echo '<h1>' . get_the_title() . '</h1>';
+    echo '<h2 class="title">' . get_the_title() . '</h2>';
   }
 }

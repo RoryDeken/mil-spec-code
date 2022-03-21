@@ -13,6 +13,7 @@ get_header(); ?>
 <div class="container">
   <div class="row">
   <main>
+    <h2 class="title"><?php the_title(); ?></h2>
     <?php
     // Start the loop.
     while (have_posts()) : the_post();

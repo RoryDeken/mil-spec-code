@@ -1,4 +1,12 @@
-﻿/* Main Theme Styles file */
+﻿/*
+Theme Name: Military
+Author: DekenDesign
+Author URL: dekendesign.com
+Version:1.0.0
+
+*/
+
+/* Main Theme Styles file */
 // Major components.
 @import "reset";
 @import "vars";
@@ -266,12 +274,6 @@ ol {
     }
   }
 
-  input[type='text'],
-  input[type='email'],
-  input[type='password'],
-  input[type='tel'],
-  input[type='url'],
-  input[type='search'] {}
 
   textarea {
     max-height: 147px;
@@ -329,7 +331,7 @@ article {
 
 /* Images.
 ------------------------------------------------------------ */
-.wp-post-image {}
+
 
 .alignleft {
   float: left;
@@ -392,12 +394,8 @@ img.border {
   position: relative;
   clear: both;
   overflow: hidden;
-  padding: 50px;
+  padding: 0 50px;
   min-height: 65vh;
-
-  .search &,
-  .search-results &,
-  .error404 & {}
 }
 
 /*@include break($not-mobile) {
@@ -525,8 +523,46 @@ h2 {
   font-family: $oswald;
   font-size: 24px;
   font-weight: normal;
-  padding-bottom: 25px;
+  padding: 25px 0;
   text-transform: uppercase;
+  text-align: center;
+
+  &.title::before,
+  &.title::after {
+    background-image: url("../images/title-decor-dark.png");
+    content: "";
+    display: inline-block;
+    height: 12px;
+    margin-top: 13px;
+    vertical-align: top;
+    width: 41px;
+  }
+
+  &.title::before {
+    background-position: 0 0;
+    margin-right: 20px;
+  }
+
+  &.title::after {
+    background-position: 0 -12px;
+    margin-left: 20px;
+  }
+
+  @include break($neutral) {
+
+    &::before,
+    &::after {
+      margin-top: 10px;
+    }
+  }
+
+  @include break($mobile) {
+
+    &.title::before,
+    & &.title::after {
+      display: none;
+    }
+  }
 
   @include break($neutral) {
     font-size: 22px;
